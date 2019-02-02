@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A082161222029E48001A7D1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A082161122029E48001A7D1B /* Default-568h@2x.png */; };
+		A0CC8E2D22054D3C00ABCCF4 /* ActiveTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E2C22054D3C00ABCCF4 /* ActiveTabController.swift */; };
+		A0CC8E2F22054D4700ABCCF4 /* HistoryTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E2E22054D4700ABCCF4 /* HistoryTabController.swift */; };
+		A0CC8E3122054F8B00ABCCF4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E3022054F8B00ABCCF4 /* TabBarController.swift */; };
 		A0D9200420C7862E007696E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9200320C7862E007696E5 /* AppDelegate.swift */; };
 		A0D9200620C7862E007696E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9200520C7862E007696E5 /* ViewController.swift */; };
 		A0D9200B20C78630007696E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D9200A20C78630007696E5 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 		160CE5F1B181E9867B16CB18 /* Pods-in-my-fridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-in-my-fridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-in-my-fridge/Pods-in-my-fridge.release.xcconfig"; sourceTree = "<group>"; };
 		51F637FC95035213597A2147 /* Pods-in-my-fridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-in-my-fridge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-in-my-fridge/Pods-in-my-fridge.debug.xcconfig"; sourceTree = "<group>"; };
 		A082161122029E48001A7D1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A0CC8E2C22054D3C00ABCCF4 /* ActiveTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTabController.swift; sourceTree = "<group>"; };
+		A0CC8E2E22054D4700ABCCF4 /* HistoryTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabController.swift; sourceTree = "<group>"; };
+		A0CC8E3022054F8B00ABCCF4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A0D9200020C7862E007696E5 /* in-my-fridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "in-my-fridge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D9200320C7862E007696E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0D9200520C7862E007696E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A0CC8E2B22054D1400ABCCF4 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC8E2C22054D3C00ABCCF4 /* ActiveTabController.swift */,
+				A0CC8E2E22054D4700ABCCF4 /* HistoryTabController.swift */,
+				A0CC8E3022054F8B00ABCCF4 /* TabBarController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		A0D6E24D20C787E800E606F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +90,7 @@
 		A0D6E24F20C78A8400E606F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A0CC8E2B22054D1400ABCCF4 /* Tabs */,
 				A0D9200520C7862E007696E5 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -214,7 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CC8E2F22054D4700ABCCF4 /* HistoryTabController.swift in Sources */,
 				A0D9200620C7862E007696E5 /* ViewController.swift in Sources */,
+				A0CC8E2D22054D3C00ABCCF4 /* ActiveTabController.swift in Sources */,
+				A0CC8E3122054F8B00ABCCF4 /* TabBarController.swift in Sources */,
 				A0D9200420C7862E007696E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
