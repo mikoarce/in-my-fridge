@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HistoryTabController: UIViewController {
+class HistoryTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TabBarController: UITabBarController, UITabBarControllerDelegate {
+class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -17,8 +17,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let activeTabController = ActiveTabController()
-        let historyTabController = HistoryTabController()
+        let activeTabController = ActiveTabViewController()
+        let historyTabController = HistoryTabViewController()
         self.viewControllers = [activeTabController, historyTabController]
         self.selectedIndex = 1
     }
