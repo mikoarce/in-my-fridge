@@ -10,23 +10,12 @@ import Foundation
 import UIKit
 
 class ActiveTabViewController: UIViewController {
-    @objc private func btnClick(_ sender: UIBarButtonItem) {
-        print("button pressed!")
-    }
+
     
     private func buildNavBar() -> UINavigationBar{
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.size.width, height: 44))
-        navBar.backgroundColor = .white
-        
-        let navItem = UINavigationItem()
-        let leftButton = UIBarButtonItem(title: "Left", style: .plain, target: self, action: #selector(self.btnClick(_:)))
-        let rightButton = UIBarButtonItem(title: "Right", style: .plain, target: self, action: nil)
-        
-        navItem.leftBarButtonItem = leftButton
-        navItem.rightBarButtonItem = rightButton
-        navBar.items = [navItem]
-        
+        let navBar = ActiveTabNavBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.size.width, height: 44))
+
         return navBar
     }
     
