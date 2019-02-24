@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0151E3422220BCB0052F498 /* ActiveTabNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0151E3322220BCB0052F498 /* ActiveTabNavBar.swift */; };
+		A0151E37222212600052F498 /* FoodTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0151E36222212600052F498 /* FoodTableView.swift */; };
 		A082161222029E48001A7D1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A082161122029E48001A7D1B /* Default-568h@2x.png */; };
 		A0CC8E2D22054D3C00ABCCF4 /* ActiveTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E2C22054D3C00ABCCF4 /* ActiveTabViewController.swift */; };
 		A0CC8E2F22054D4700ABCCF4 /* HistoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E2E22054D4700ABCCF4 /* HistoryTabViewController.swift */; };
@@ -23,6 +24,7 @@
 		160CE5F1B181E9867B16CB18 /* Pods-in-my-fridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-in-my-fridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-in-my-fridge/Pods-in-my-fridge.release.xcconfig"; sourceTree = "<group>"; };
 		51F637FC95035213597A2147 /* Pods-in-my-fridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-in-my-fridge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-in-my-fridge/Pods-in-my-fridge.debug.xcconfig"; sourceTree = "<group>"; };
 		A0151E3322220BCB0052F498 /* ActiveTabNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTabNavBar.swift; sourceTree = "<group>"; };
+		A0151E36222212600052F498 /* FoodTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableView.swift; sourceTree = "<group>"; };
 		A082161122029E48001A7D1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A0CC8E2C22054D3C00ABCCF4 /* ActiveTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTabViewController.swift; sourceTree = "<group>"; };
 		A0CC8E2E22054D4700ABCCF4 /* HistoryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabViewController.swift; sourceTree = "<group>"; };
@@ -65,9 +67,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A0151E352222124B0052F498 /* FoodTable */ = {
+			isa = PBXGroup;
+			children = (
+				A0151E36222212600052F498 /* FoodTableView.swift */,
+			);
+			path = FoodTable;
+			sourceTree = "<group>";
+		};
 		A095DEA12219EC670094CB51 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A0151E352222124B0052F498 /* FoodTable */,
 				A0151E3322220BCB0052F498 /* ActiveTabNavBar.swift */,
 			);
 			path = Components;
@@ -244,6 +255,7 @@
 			files = (
 				A0CC8E2F22054D4700ABCCF4 /* HistoryTabViewController.swift in Sources */,
 				A0D9200620C7862E007696E5 /* ViewController.swift in Sources */,
+				A0151E37222212600052F498 /* FoodTableView.swift in Sources */,
 				A0CC8E2D22054D3C00ABCCF4 /* ActiveTabViewController.swift in Sources */,
 				A0151E3422220BCB0052F498 /* ActiveTabNavBar.swift in Sources */,
 				A0CC8E3122054F8B00ABCCF4 /* MainTabBarViewController.swift in Sources */,

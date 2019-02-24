@@ -20,7 +20,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let activeTabController = ActiveTabViewController()
         let historyTabController = HistoryTabViewController()
         self.viewControllers = [activeTabController, historyTabController]
-        self.selectedIndex = 0
+        self.selectedIndex = 1
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
