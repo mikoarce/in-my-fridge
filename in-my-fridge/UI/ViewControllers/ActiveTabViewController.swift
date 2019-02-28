@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class ActiveTabViewController: UIViewController {
+class ActiveTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private let myArray: NSArray = ["First", "Second", "Third"]
     let STATUS_HEIGHT = UIApplication.shared.statusBarFrame.size.height
     let NAV_BAR_HEIGHT = CGFloat(44)
 
@@ -18,7 +19,12 @@ class ActiveTabViewController: UIViewController {
         let displayHeight: CGFloat = self.view.frame.height
         
         let tableRect = CGRect(x: 0, y: STATUS_HEIGHT + NAV_BAR_HEIGHT, width: displayWidth, height: displayHeight)
-        return FoodTableView(frame: tableRect, style: .plain)
+        let table = UITableView(frame: tableRect, style: .plain)
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        table.dataSource = self
+        table.delegate = self
+
+        return table
     }
     
     private func buildNavBar() -> UINavigationBar {
@@ -36,5 +42,20 @@ class ActiveTabViewController: UIViewController {
         
         self.view.addSubview(self.buildNavBar())
         self.view.addSubview(self.buildTable())
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Num: \(indexPath.row)")
+        print("Value: \(myArray[indexPath.row])")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+        cell.textLabel!.text = "\(myArray[indexPath.row])"
+        return cell
     }
 }
