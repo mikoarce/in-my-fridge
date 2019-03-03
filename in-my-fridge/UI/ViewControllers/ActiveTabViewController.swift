@@ -9,28 +9,17 @@
 import Foundation
 import UIKit
 
-class ActiveTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    private let myArray: NSArray = ["First", "Second", "Third"]
+class ActiveTabViewController: UIViewController {
     let STATUS_HEIGHT = UIApplication.shared.statusBarFrame.size.height
     let NAV_BAR_HEIGHT = CGFloat(44)
-
-    private func buildTable() -> UITableView {
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-        
-        let tableRect = CGRect(x: 0, y: STATUS_HEIGHT + NAV_BAR_HEIGHT, width: displayWidth, height: displayHeight)
-        let table = UITableView(frame: tableRect, style: .plain)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-        table.dataSource = self
-        table.delegate = self
-
-        return table
-    }
     
-    private func buildNavBar() -> UINavigationBar {
-        let navBar = ActiveTabNavBar(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: view.frame.size.width, height: NAV_BAR_HEIGHT))
+    var tableView: UITableView?
 
-        return navBar
+    private let dataSource = FoodDataModel()
+    fileprivate var data = [FoodModel]() {
+        didSet {
+            tableView?.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -40,22 +29,64 @@ class ActiveTabViewController: UIViewController, UITableViewDelegate, UITableVie
         self.title = "Active"
         self.tabBarItem = UITabBarItem(title: self.title, image: nil, selectedImage: nil)
         
-        self.view.addSubview(self.buildNavBar())
-        self.view.addSubview(self.buildTable())
+        self.addNavBarToView()
+        self.addTableToView()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Num: \(indexPath.row)")
-        print("Value: \(myArray[indexPath.row])")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        dataSource.requestData()
     }
     
+    private func addNavBarToView() {
+        let navBar = ActiveTabNavBar(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: view.frame.size.width, height: NAV_BAR_HEIGHT))
+        
+        self.view.addSubview(navBar)
+    }
+    
+    private func addTableToView() {
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+        
+        let tableRect = CGRect(x: 0, y: STATUS_HEIGHT + NAV_BAR_HEIGHT, width: displayWidth, height: displayHeight)
+        tableView = UITableView(frame: tableRect, style: .plain)
+        self.tableView?.register(FoodTableViewCell.nib, forCellReuseIdentifier: FoodTableViewCell.identifier)
+
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        self.dataSource.delegate = self
+
+        self.view.addSubview(self.tableView!)
+    }
+}
+
+extension ActiveTabViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+extension ActiveTabViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(myArray[indexPath.row])"
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.identifier, for: indexPath) as? FoodTableViewCell {
+            cell.configureWithItem(item: self.data[indexPath.item])
+            return cell
+        }
+        return UITableViewCell()
+    }
+}
+
+extension ActiveTabViewController: FoodDataModelDelegate {
+    func didFailDataUpdateWithError(error: Error) {
+        print(error)
+    }
+    
+    func didReceiveDataUpdate(data: [FoodModel]) {
+        self.data = data
     }
 }

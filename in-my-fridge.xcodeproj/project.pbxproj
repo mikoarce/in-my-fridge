@@ -12,6 +12,10 @@
 		A0CC8E2D22054D3C00ABCCF4 /* ActiveTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E2C22054D3C00ABCCF4 /* ActiveTabViewController.swift */; };
 		A0CC8E2F22054D4700ABCCF4 /* HistoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E2E22054D4700ABCCF4 /* HistoryTabViewController.swift */; };
 		A0CC8E3122054F8B00ABCCF4 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC8E3022054F8B00ABCCF4 /* MainTabBarViewController.swift */; };
+		A0D0E67B2227855000F593D2 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0E6792227855000F593D2 /* FoodTableViewCell.swift */; };
+		A0D0E67C2227855000F593D2 /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D0E67A2227855000F593D2 /* FoodTableViewCell.xib */; };
+		A0D0E67E222786C000F593D2 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0E67D222786C000F593D2 /* FoodModel.swift */; };
+		A0D0E68022278CD100F593D2 /* FoodDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0E67F22278CD100F593D2 /* FoodDataModel.swift */; };
 		A0D9200420C7862E007696E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9200320C7862E007696E5 /* AppDelegate.swift */; };
 		A0D9200B20C78630007696E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D9200A20C78630007696E5 /* Assets.xcassets */; };
 		A0D9200E20C78630007696E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D9200C20C78630007696E5 /* LaunchScreen.storyboard */; };
@@ -26,6 +30,10 @@
 		A0CC8E2C22054D3C00ABCCF4 /* ActiveTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTabViewController.swift; sourceTree = "<group>"; };
 		A0CC8E2E22054D4700ABCCF4 /* HistoryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabViewController.swift; sourceTree = "<group>"; };
 		A0CC8E3022054F8B00ABCCF4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		A0D0E6792227855000F593D2 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		A0D0E67A2227855000F593D2 /* FoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
+		A0D0E67D222786C000F593D2 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodModel.swift; path = "in-my-fridge/UI/Components/FoodModel.swift"; sourceTree = SOURCE_ROOT; };
+		A0D0E67F22278CD100F593D2 /* FoodDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataModel.swift; sourceTree = "<group>"; };
 		A0D9200020C7862E007696E5 /* in-my-fridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "in-my-fridge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D9200320C7862E007696E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0D9200A20C78630007696E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				A0151E3322220BCB0052F498 /* ActiveTabNavBar.swift */,
+				A0D0E6792227855000F593D2 /* FoodTableViewCell.swift */,
+				A0D0E67A2227855000F593D2 /* FoodTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -84,6 +94,7 @@
 		A0D6E24D20C787E800E606F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A0D0E67D222786C000F593D2 /* FoodModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +111,7 @@
 		A0D6E24F20C78A8400E606F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A0D0E67F22278CD100F593D2 /* FoodDataModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D9200E20C78630007696E5 /* LaunchScreen.storyboard in Resources */,
+				A0D0E67C2227855000F593D2 /* FoodTableViewCell.xib in Resources */,
 				A0D9200B20C78630007696E5 /* Assets.xcassets in Resources */,
 				A082161222029E48001A7D1B /* Default-568h@2x.png in Resources */,
 			);
@@ -240,10 +253,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CC8E2F22054D4700ABCCF4 /* HistoryTabViewController.swift in Sources */,
+				A0D0E68022278CD100F593D2 /* FoodDataModel.swift in Sources */,
 				A0CC8E2D22054D3C00ABCCF4 /* ActiveTabViewController.swift in Sources */,
 				A0151E3422220BCB0052F498 /* ActiveTabNavBar.swift in Sources */,
 				A0CC8E3122054F8B00ABCCF4 /* MainTabBarViewController.swift in Sources */,
 				A0D9200420C7862E007696E5 /* AppDelegate.swift in Sources */,
+				A0D0E67B2227855000F593D2 /* FoodTableViewCell.swift in Sources */,
+				A0D0E67E222786C000F593D2 /* FoodModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
