@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class ActiveTabViewController: UIViewController {
-    let STATUS_HEIGHT = UIApplication.shared.statusBarFrame.size.height
-    let NAV_BAR_HEIGHT = CGFloat(44)
-    
+    let statusHeight = UIApplication.shared.statusBarFrame.size.height
+    let navBarHeight = CGFloat(44)
+
     var tableView: UITableView?
 
     private let dataSource = FoodDataModel()
@@ -21,35 +21,36 @@ class ActiveTabViewController: UIViewController {
             tableView?.reloadData()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = .green
         self.title = "Active"
         self.tabBarItem = UITabBarItem(title: self.title, image: nil, selectedImage: nil)
-        
+
         self.addNavBarToView()
         self.addTableToView()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
         dataSource.requestData()
     }
-    
+
     private func addNavBarToView() {
-        let navBar = ActiveTabNavBar(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: view.frame.size.width, height: NAV_BAR_HEIGHT))
-        
+        let navBarRect = CGRect(x: 0, y: statusHeight, width: view.frame.size.width, height: navBarHeight)
+        let navBar = ActiveTabNavBar(frame: navBarRect)
+
         self.view.addSubview(navBar)
     }
-    
+
     private func addTableToView() {
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
-        
-        let tableRect = CGRect(x: 0, y: STATUS_HEIGHT + NAV_BAR_HEIGHT, width: displayWidth, height: displayHeight)
+
+        let tableRect = CGRect(x: 0, y: statusHeight + navBarHeight, width: displayWidth, height: displayHeight)
         tableView = UITableView(frame: tableRect, style: .plain)
         self.tableView?.register(FoodTableViewCell.nib, forCellReuseIdentifier: FoodTableViewCell.identifier)
 
@@ -71,9 +72,10 @@ extension ActiveTabViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.identifier, for: indexPath) as? FoodTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.identifier, for: indexPath)
+            as? FoodTableViewCell {
             cell.configureWithItem(item: self.data[indexPath.item])
             return cell
         }
@@ -85,7 +87,7 @@ extension ActiveTabViewController: FoodDataModelDelegate {
     func didFailDataUpdateWithError(error: Error) {
         print(error)
     }
-    
+
     func didReceiveDataUpdate(data: [FoodModel]) {
         self.data = data
     }

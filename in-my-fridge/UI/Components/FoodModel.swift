@@ -13,7 +13,7 @@ class FoodModel {
     var foodImage: UIImage?
     var name: String?
     var dateAdded: Date?
-    
+
     init?(data: [String: String]?) {
         if let data = data, let name = data["name"] {
             self.name = name

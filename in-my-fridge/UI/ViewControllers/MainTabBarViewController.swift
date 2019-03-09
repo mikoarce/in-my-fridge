@@ -14,7 +14,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         delegate = self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let activeTabController = ActiveTabViewController()
@@ -22,8 +22,9 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.viewControllers = [activeTabController, historyTabController]
         self.selectedIndex = 1
     }
-    
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+    func tabBarController(_ tabBarController: UITabBarController,
+                          shouldSelect viewController: UIViewController) -> Bool {
         print("Select view controller: \(viewController.title!)")
         return true
     }

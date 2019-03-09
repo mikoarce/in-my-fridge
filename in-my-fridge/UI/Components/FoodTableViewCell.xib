@@ -36,9 +36,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z8M-ID-aPj">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z8M-ID-aPj">
                         <rect key="frame" x="16" y="17" width="58" height="58"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.015402874909999999" green="0.4739975333" blue="0.98084884880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
@@ -51,7 +52,4 @@
             <point key="canvasLocation" x="137.59999999999999" y="176.76161919040482"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Default.png" width="320" height="568"/>
-    </resources>
 </document>

@@ -12,7 +12,7 @@ import UIKit
 class HistoryTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = .red
         self.title = "History"
         self.tabBarItem = UITabBarItem(title: self.title, image: nil, selectedImage: nil)

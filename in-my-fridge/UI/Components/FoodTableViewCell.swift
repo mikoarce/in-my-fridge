@@ -12,15 +12,15 @@ class FoodTableViewCell: UITableViewCell {
     @IBOutlet weak var foodImage: UIImageView?
     @IBOutlet weak var foodName: UILabel?
     @IBOutlet weak var foodTimer: UILabel?
-    
+
     class var identifier: String {
         return String(describing: self)
     }
-    
+
     class var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,11 +31,11 @@ class FoodTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func configureWithItem(item: FoodModel) {
         self.foodImage?.image = item.foodImage
         self.foodName?.text = item.name
         self.foodTimer?.text = "timer"
     }
-    
+
 }

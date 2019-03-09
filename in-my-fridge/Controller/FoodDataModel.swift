@@ -15,14 +15,14 @@ protocol FoodDataModelDelegate: class {
 
 class FoodDataModel {
     weak var delegate: FoodDataModelDelegate?
-    
+
     func requestData() {
         //        let error: Error?
         //
         //        if let err = error {
         //            delegate?.didFailDataUpdateWithError(error: err)
         //        }
-        
+
         self.setData()
     }
 
@@ -32,7 +32,7 @@ class FoodDataModel {
             ["name": "Entry# 2"]
         ]
         var data = [FoodModel]()
-        
+
         for item in response {
             if let modelItem = FoodModel(data: item) {
                 data.append(modelItem)
