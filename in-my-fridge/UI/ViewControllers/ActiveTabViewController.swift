@@ -81,6 +81,12 @@ extension ActiveTabViewController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let data = self.data[indexPath.item]
+        let viewFoodDataController = ViewFoodDataViewController()
+        self.navigationController?.pushViewController(viewFoodDataController, animated: false)
+    }
 }
 
 extension ActiveTabViewController: FoodDataModelDelegate {
