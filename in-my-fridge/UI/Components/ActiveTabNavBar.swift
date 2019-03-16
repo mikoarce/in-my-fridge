@@ -26,6 +26,7 @@ class ActiveTabNavBar: UINavigationBar {
 
         navItem.leftBarButtonItem = leftButton
         navItem.rightBarButtonItem = rightButton
+
         self.items = [navItem]
     }
 

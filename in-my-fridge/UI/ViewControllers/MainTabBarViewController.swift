@@ -12,6 +12,7 @@ import UIKit
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "In My Fridge"
         delegate = self
     }
 
