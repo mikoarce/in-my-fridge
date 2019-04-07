@@ -22,6 +22,10 @@ class ActiveTabViewController: UIViewController {
         }
     }
 
+    @objc private func btnClick(_ sender: UIBarButtonItem) {
+        print("button pressed!")
+    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -37,11 +41,7 @@ class ActiveTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .green
-        self.title = "Active"
-        self.tabBarItem = UITabBarItem(title: self.title, image: nil, selectedImage: nil)
-
-        self.addNavBarToView()
+        self.setNavBarButtons()
         self.addTableToView()
     }
 
@@ -51,11 +51,14 @@ class ActiveTabViewController: UIViewController {
         dataSource.requestData()
     }
 
-    private func addNavBarToView() {
-        let navBarRect = CGRect(x: 0, y: statusHeight, width: view.frame.size.width, height: navBarHeight)
-        let navBar = ActiveTabNavBar(frame: navBarRect)
+    private func setNavBarButtons() {
+        let leftButton = UIBarButtonItem(title: "Left", style: .plain,
+                                         target: self, action: #selector(self.btnClick(_:)))
+        let rightButton = UIBarButtonItem(title: "Right", style: .plain,
+                                          target: self, action: nil)
 
-        self.view.addSubview(navBar)
+        self.navigationItem.leftBarButtonItem = leftButton
+        self.navigationItem.rightBarButtonItem = rightButton
     }
 
     private func addTableToView() {
