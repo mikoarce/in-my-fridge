@@ -14,14 +14,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.title = "In My Fridge"
         delegate = self
+
+        let activeTabController = UINavigationController(rootViewController: ActiveTabViewController())
+        let historyTabController = UINavigationController(rootViewController: HistoryTabViewController())
+
+        self.viewControllers = [activeTabController, historyTabController]
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let activeTabController = ActiveTabViewController()
-        let historyTabController = HistoryTabViewController()
-        self.viewControllers = [activeTabController, historyTabController]
-        self.selectedIndex = 1
     }
 
     func tabBarController(_ tabBarController: UITabBarController,

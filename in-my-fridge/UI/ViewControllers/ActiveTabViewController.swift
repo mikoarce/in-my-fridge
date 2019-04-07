@@ -22,6 +22,18 @@ class ActiveTabViewController: UIViewController {
         }
     }
 
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        view.backgroundColor = .red
+        self.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 0)
+        self.title = "Active"
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,7 +95,6 @@ extension ActiveTabViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let data = self.data[indexPath.item]
         let viewFoodDataController = ViewFoodDataViewController()
         self.navigationController?.pushViewController(viewFoodDataController, animated: false)
     }

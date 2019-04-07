@@ -10,12 +10,16 @@ import Foundation
 import UIKit
 
 class HistoryTabViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init() {
+        super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .red
+        self.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
         self.title = "History"
-        self.tabBarItem = UITabBarItem(title: self.title, image: nil, selectedImage: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewWillAppear(_ animated: Bool) {
